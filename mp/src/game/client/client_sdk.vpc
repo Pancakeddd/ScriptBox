@@ -1,0 +1,92 @@
+//-----------------------------------------------------------------------------
+//	CLIENT_SDK.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+$Macro SRCDIR		"..\.."
+$Macro GAMENAME 	"sdk"
+
+$Include "$SRCDIR\game\client\client_base.vpc"
+
+$Configuration
+{
+    $Compiler
+    {
+        $AdditionalIncludeDirectories    "$BASE;..\statemachine;.\;.\episodic\;.\game_controls\;.\hl2\;.\hl2mp\;.\hl2mp\ui\;.\replay\;.\replay\vgui\;.\sdk\;.\sdk\vgui\;.\sixense\;$SRCDIR\game\shared\;$SRCDIR\game\shared\econ\;$SRCDIR\game\shared\episodic\;$SRCDIR\game\shared\hl2\;$SRCDIR\game\shared\hl2mp\;$SRCDIR\game\shared\Multiplayer\;$SRCDIR\game\shared\sdk\;$SRCDIR\game\shared\sixense\"
+        $PreprocessorDefinitions         "$BASE;SDK_DLL;SDK_CLIENT_DLL;"
+    }
+}
+
+$Project "Client (SDK)"
+{
+    $Folder	"Source Files"
+    {
+		$Folder	"SDK DLL"
+        {
+		    $Folder	"Shared"
+            {
+                $File    "$SRCDIR\game\shared\sdk\sdk_basegrenade_projectile.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_basegrenade_projectile.h"
+                $File    "$SRCDIR\game\shared\sdk\sdk_fx_shared.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_fx_shared.h"
+                $File    "$SRCDIR\game\shared\sdk\sdk_gamemovement.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_gamerules.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_gamerules.h"
+                $File    "$SRCDIR\game\shared\sdk\sdk_playeranimstate.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_playeranimstate.h"
+                $File    "$SRCDIR\game\shared\sdk\sdk_playerclass_info_parse.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_playerclass_info_parse.h"
+                $File    "$SRCDIR\game\shared\sdk\sdk_player_shared.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_player_shared.h"
+                $File    "$SRCDIR\game\shared\sdk\sdk_shareddefs.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_shareddefs.h"
+                $File    "$SRCDIR\game\shared\sdk\sdk_usermessages.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_weapon_melee.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_weapon_melee.h"
+                $File    "$SRCDIR\game\shared\sdk\sdk_weapon_parse.cpp"
+                $File    "$SRCDIR\game\shared\sdk\sdk_weapon_parse.h"
+                $File    "$SRCDIR\game\shared\sdk\weapon_basesdkgrenade.cpp"
+                $File    "$SRCDIR\game\shared\sdk\weapon_basesdkgrenade.h"
+                $File    "$SRCDIR\game\shared\sdk\weapon_crowbar.cpp"
+                $File    "$SRCDIR\game\shared\sdk\weapon_grenade.cpp"
+                $File    "$SRCDIR\game\shared\sdk\weapon_grenade.h"
+                $File    "$SRCDIR\game\shared\sdk\weapon_mp5.cpp"
+                $File    "$SRCDIR\game\shared\sdk\weapon_pistol.cpp"
+                $File    "$SRCDIR\game\shared\sdk\weapon_sdkbase.cpp"
+                $File    "$SRCDIR\game\shared\sdk\weapon_sdkbase.h"
+                $File    "$SRCDIR\game\shared\sdk\weapon_shotgun.cpp"
+            }
+			
+            $Folder "vgui"
+            {
+                $Folder "Headers"
+                {
+                    $File    "sdk\vgui\sdkviewport.h"
+                    $File    "sdk\vgui\vgui_rootpanel_sdk.h"
+                }
+				
+                $File    "sdk\vgui\sdkviewport.cpp"
+                $File    "sdk\vgui\vgui_rootpanel_sdk.cpp"
+            }
+			
+            $File    "sdk\clientmode_sdk.cpp"
+            $File    "sdk\clientmode_sdk.h"
+            $File    "sdk\c_sdk_env_sparkler.cpp"
+            $File    "sdk\c_sdk_player.cpp"
+            $File    "sdk\c_sdk_player.h"
+            $File    "sdk\c_sdk_team.cpp"
+            $File    "sdk\c_sdk_team.h"
+            $File    "sdk\c_te_firebullets.cpp"
+            $File    "sdk\sdk_fx_impacts.cpp"
+            $File    "sdk\sdk_fx_weaponfx.cpp"
+            $File    "sdk\sdk_hud_ammo.cpp"
+            $File    "sdk\sdk_hud_chat.cpp"
+            $File    "sdk\sdk_hud_chat.h"
+            $File    "sdk\sdk_hud_health.cpp"
+            $File    "sdk\sdk_hud_message.cpp"
+            $File    "sdk\sdk_hud_weaponselection.cpp"
+            $File    "sdk\sdk_in_main.cpp"
+            $File    "sdk\sdk_prediction.cpp"
+        }
+    }
+}
